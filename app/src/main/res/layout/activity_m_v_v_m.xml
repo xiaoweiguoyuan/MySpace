@@ -8,16 +8,16 @@
         <import type="java.util.Map" />
         <variable
             name="userInfo"
-            type="com.wuba.car.myspace.testmvvm.User" />
+            type="com.puci.qs.myspace.testmvvm.User" />
 <!--        <variable-->
 <!--            name="mvvmModel"-->
 <!--            type="com.wuba.car.myspace.testmvvm.MVVMViewModel" />-->
         <variable
             name="presenter"
-            type="com.wuba.car.myspace.testmvvm.Presenter" />
+            type="com.puci.qs.myspace.testmvvm.Presenter" />
         <variable
             name="user2"
-            type="com.wuba.car.myspace.testmvvm.User2" />
+            type="com.puci.qs.myspace.testmvvm.User2" />
         <variable
             name="map"
             type="Map&lt;String, String&gt;" />

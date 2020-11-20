@@ -77,7 +77,7 @@
          app:layout_constraintBottom_toBottomOf="parent"
          app:layout_constraintRight_toRightOf="parent"/>
 
-     <com.wuba.car.myspace.view.CircularProgressView
+     <com.puci.qs.myspace.view.CircularProgressView
          android:id="@+id/progress"
          android:layout_width="35dp"
          android:layout_height="35dp"
