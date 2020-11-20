@@ -13,8 +13,8 @@ open class VPAdapter:FragmentStatePagerAdapter{
 
     constructor(fm: FragmentManager) : super(fm) {
         commonWebFragments = ArrayList<Fragment>()
-        commonWebFragments.add(SearchWebFragment())
-        commonWebFragments.add(SubscribeFragment())
+//        commonWebFragments.add(SearchWebFragment())
+//        commonWebFragments.add(SubscribeFragment())
         commonWebFragments.add(SearchFragment())
     }
 
@@ -32,6 +32,6 @@ open class VPAdapter:FragmentStatePagerAdapter{
     }
 
     fun onBackPressed() {
-        (commonWebFragments[0] as SearchWebFragment).onBackPressed()
+//        (commonWebFragments[0] as SearchWebFragment).onBackPressed()
     }
 }

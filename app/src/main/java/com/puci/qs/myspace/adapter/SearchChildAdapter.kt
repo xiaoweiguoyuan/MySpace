@@ -14,8 +14,4 @@ class SearchChildAdapter(context: Context, mDatas: List<Podcast>?) : BaseAdapter
         return SearchChildVH(view)
     }
 
-    override fun getItemCount(): Int {
-        return 10
-    }
-
 }

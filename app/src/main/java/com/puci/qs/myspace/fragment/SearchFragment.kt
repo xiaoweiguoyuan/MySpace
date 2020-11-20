@@ -23,7 +23,7 @@ open class SearchFragment : BaseFragment<SearchPresenter>() {
 
     override fun initViews(view: View?) {
         vp = view?.findViewById(R.id.vp)!!
-        vp.adapter = VPAdapter(parentFragmentManager, getFragments())
+        vp.adapter = VPAdapter(childFragmentManager, getFragments())
     }
 
     private fun getFragments(): ArrayList<Fragment> {
