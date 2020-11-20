@@ -1,0 +1,26 @@
+@startuml
+CommonWebFragment -> JsApi: 加载H5搜索页面、传递信息给H5页面
+JsApi --> CommonWebFragment: 调用播放Episode、添加到播放列表(Episode)
+
+CommonWebFragment -> SearchPlayController: 调起播放页面[调用播放Episode、添加到播放列表(Episode)]
+CommonWebFragment <-- SearchPlayController: 将播放进度等信息传递给H5页面
+
+SearchPlayController -> SearchPlayDialog: 负责播放页面、播放列表UI展示[playEpisode、addEpisodeToPlayList]
+SearchPlayDialog -> PlayAdapterNew: adapter?.onPlayStart(0, episode)
+PlayAdapterNew -> PlayingViewFrg: onPlayStart(position: Int, episode: Episode)
+SearchPlayDialog -> PlayControllerNew: playEpisode(episode)
+SearchPlayDialog -> PlayControllerNew: addEpisodeToPlayList(episode: Episode)
+
+PlayControllerNew -> MediaService: ACTION_MUSIC_PLAY
+PlayControllerNew -> MediaService: MediaService.ACTION_MUSIC_ADD
+PlayControllerNew <-- MediaService: playController.updateProgress(data.maxSize, data.progress)
+PlayControllerNew <-- MediaService: playController.updateBuffSize(data.maxSize, data.buffSize)
+@enduml
+@startuml
+
+SearchPlayController -> SearchPlayDialog: 轮询插嘴内容传递给Dialog - addComments(comments: ArrayList<CommentBean>)
+SearchPlayDialog -> PlayAdapterNew: adapter?.addComments(comments)
+PlayAdapterNew -> PlayingViewFrg: playingViewFrg.addComments(comments)
+
+
+@enduml

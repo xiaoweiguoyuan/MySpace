@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="java.util.Map" />
+        <variable
+            name="userInfo"
+            type="com.wuba.car.myspace.testmvvm.User" />
+<!--        <variable-->
+<!--            name="mvvmModel"-->
+<!--            type="com.wuba.car.myspace.testmvvm.MVVMViewModel" />-->
+        <variable
+            name="presenter"
+            type="com.wuba.car.myspace.testmvvm.Presenter" />
+        <variable
+            name="user2"
+            type="com.wuba.car.myspace.testmvvm.User2" />
+        <variable
+            name="map"
+            type="Map&lt;String, String&gt;" />
+        <variable
+            name="flag"
+            type="boolean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".testmvvm.MVVMActivity">
+        <TextView
+            android:id="@+id/tv_name"
+            android:text="@{userInfo.name}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_pwd"
+            android:text="@{userInfo.password}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+<!--        <TextView-->
+<!--            android:id="@+id/tv_model"-->
+<!--            android:text="@{mvvmModel.toString()}"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="输入 Last Name"
+            android:onTextChanged="@{presenter.onTextChanged}" />
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->presenter.onClickListenerBinding(userInfo)}"
+            android:text="@{user2.fristName}" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="是否显示"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            android:visibility="@{userInfo.isShow ? View.VISIBLE:View.GONE }" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{userInfo.nums[0]}" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text='@{userInfo.getmaps["name"]}' />
+        <!--
+                这里的bind:url="@{user.imageUrl}"即为调用 @BindingAdapter({"url"}绑定的数据
+                -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            bind:url="@{user2.imageUrl}"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text_add="@{user2.imageUrl}" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{"测试"}'/>
+
+        <!--
+        使用map等集合
+        Array、List、Set、Map …
+        引用资源文件，如dimens.xml
+        -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@{flag?@dimen/paddingBig: @dimen/paddingSmall}"
+            android:text='@{map.get("leavesC")}'/>
+    </LinearLayout>
+</layout>

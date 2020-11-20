@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">汽水儿</string>
+
+    <string name="loading">加载中</string>
+    <string name="get_code">发送验证码</string>
+    <string name="get_code_timer">重新发送(%s)</string>
+    <string name="tourists_mode">逛一逛</string>
+    <string name="login">马上登录</string>
+    <string name="base_info">基本资料</string>
+    <string name="publish">发布</string>
+    <string name="park">公园</string>
+    <string name="topic">邀约</string>
+    <string name="me">我的</string>
+    <string name="message">消息</string>
+
+    <string name="input_more_location">位置</string>
+    <string name="input_more_phone_call">语音通话</string>
+    <string name="input_more_burn_after_read">阅后即焚</string>
+    <string name="input_more_cash_red_packet">现金红包</string>
+    <string name="input_more_banana_red_packet">香蕉币红包</string>
+    <string name="lock_img_count">有%1$d张照片，其中%2$d张为红包照片</string>
+    <string name="lock_img_cost">解锁相册(%d香蕉币)，会员免费</string>
+
+    <string name="banana_coin_count">可用余额%1$d个</string>
+    <string name="banana_coin_count_1">%1$d个</string>
+
+    <string name="banana_money">&#165;%d</string>
+    <string name="rate_person_page_txt">看这里的性格属性\n哪个更像%s</string>
+    <string name="rate_count">(%d)</string>
+    <string name="vip_date">有效期: %s - %s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="subscribe_listener_cnt">%1$d 插嘴 · %2$d 播放</string>
+    <string name="subscribe_time">%1$s 分钟 · %2$d 小时前</string>
+</resources>

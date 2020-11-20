@@ -1,0 +1,96 @@
+/**
+ * 修改dependencyMode可实现全局aar依赖或源码依赖
+ */
+def dependencyMode = "aar"//project|aar
+
+
+/**
+ * 如果开关为true则为aar依赖，否则为源码依赖，可灵活设置单个Lib库的依赖方BaseIntentService式
+ */
+switchs = [
+        "BaseDependencies"    : dependencyMode == "aar",
+        "Hybrid"       : dependencyMode == "aar",
+        "MediaPlayer" : dependencyMode == "aar",
+        "PuciNet" : dependencyMode == "aar",
+]
+
+
+if(getProperties().get("project")==null){
+    return
+}
+
+ext {
+    /**
+     * 构建产品风格，实现马甲包相关功能，目前支持以下几个产品
+     * QSapp:"qs"
+     * 赶集App:"ganji"
+     * 小米市场包:"xiaomi"
+     *
+     * 快速构建调试: "fastDevQS"
+     * (关于 fastDevQS 需要注意的三点：
+     * 1. RD 本地更改 buildFlavor 为 fastDevQS 后可以提交到远程仓库，不影响 beta 打包，beta 目前会自动修正 flavor;
+     * 2. 目前脚本会隐藏 fastDevQSRelease 的任务;
+     * 3. 为了防止 fastDevQS 在 release 模式下使用，增加了第二层保护，即运行的 task 为 fastDevQSRelease，抛出异常提示 RD。
+     */
+    buildFlavor="QS"
+
+    /**
+     * 各个Lib库的版本号
+     */
+
+    HybridLibVersion = "1.0"
+    PuciNetLibVersion = "1.0"
+    DependenciesLibVersion = "1.0"
+
+//    okio                        = ["com.squareup.okio:okio:${okioVersion}"]
+//    RxAndroid                   = ["io.reactivex:rxandroid:" + "$RxAndroidVersion"]
+//    RxJava                      = ["io.reactivex:rxjava:" + "$RxJavaVersion"]
+//    RxAndroid2                  = ["io.reactivex.rxjava2:rxandroid:" + "$RxAndroidVersion2"]
+//    RxJava2                     = ["io.reactivex.rxjava2:rxjava:" + "$RxJavaVersion2"]
+//    RxBinding                   = ["com.jakewharton.rxbinding3:rxbinding:" + "$RxBindingVersion"]
+//    UltraPtr                    = ["in.srain.cube:ultra-ptr:" + "$UltraPtrVersion"]
+//    Design                      = ["com.google.android.material:material:" + "$DesignVersion"]
+//    NBS                         = ["com.networkbench.newlens.agent.android:nbs.newlens.agent:" + "$NBSVersion"]
+//    NBSNDK                      = ["com.networkbench.newlens.agent.android:nbs.newlens.nativecrash:" + "$NBSNDKVersion"]
+//    WeChat                      = ["com.tencent.mm.opensdk:wechat-sdk-android-without-mta:" + "$WeChatVersion"]
+//    RecyclerView                = ["androidx.recyclerview:recyclerview:$supportLibVersion"]
+//    AppcompatV7                 = ["androidx.appcompat:appcompat:" + "$AppcompatV7Version"]
+//    ConstraintLayout            = ["androidx.constraintlayout:constraintlayout:$ConstraintLayoutVersion"]
+//    Fresco                      = ["com.facebook.fresco:fresco:" + "$FrescoVersion"]
+//    FrescoBase                  = ["com.facebook.fresco:animated-base:"+"$FrescoVersion"]
+//    FrescoGif                   = ["com.facebook.fresco:animated-gif:"+"$FrescoVersion"]
+//    FrescoWebp                  = ["com.facebook.fresco:webpsupport:${FrescoVersion}"]
+//    FrescoWebpAnimated          = ["com.facebook.fresco:animated-webp:${FrescoVersion}"]
+//    FrescoAnimatedBase          = ["com.facebook.fresco:animated-base:$FrescoVersion"]
+
+    FastJSON                    = ["com.alibaba:fastjson:1.2.51"]
+
+    Retrofit = ["com.squareup.retrofit2:retrofit:" + "$RetrofitVersion"]
+    RetrofitAdapterRxJava = ["com.squareup.retrofit2:adapter-rxjava:$RetrofitVersion"]
+    RetrofitConvererGson = ["com.squareup.retrofit2:converter-gson:$RetrofitVersion"]
+    ArchLifecycleExtensions = ["androidx.lifecycle:lifecycle-extensions:$ArchLifecycleVersion"]
+    Kotlin = ["org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"]
+    UmsdkAnalytics = ["com.umeng.umsdk:analytics:$UmsdkAnalyticsVersion"]
+    UmsdkCommon = ["com.umeng.umsdk:common:$UmsdkCommonVersion"]
+    javapoet = ["com.squareup:javapoet:1.10.0"]
+    googleService = ['com.google.auto.service:auto-service:1.0-rc4']
+    DynamicAnimation = ["androidx.dynamicanimation:dynamicanimation:" + "$DynamicAnimationVerson"]
+    MSA = ['com.bun.miitmdid:miitmdid:1.0.23']
+    SmartRefreshLayout = ["com.scwang.smartrefresh:SmartRefreshLayout:"+"$SmartRefreshVersion"]
+    SmartRefreshHeader = ['com.scwang.smartrefresh:SmartRefreshHeader:'+"$SmartRefreshVersion"]
+
+//    DependenciesLib =[
+//            switchs['BaseDependencies']?"com.QS.wuxian.lib:BaseDependencies:"+"$DependenciesLibVersion" : findProject(':BaseDependencies'),
+//    ]
+//
+//    HybridLib = [
+//            switchs['Hybrid'] ? "com.QS.wuxian.lib:Hybrid:" + "$HybridLibVersion" : findProject(':Hybrid'),
+//            rootProject.ext.DependenciesLib,
+//    ]
+//
+//    MediaPlayerLib = [
+//            switchs['MediaPlayer'] ? "com.QS.wuxian.lib:Hybrid:" + "$HybridLibVersion" : findProject(':Hybrid'),
+//            rootProject.ext.DependenciesLib,
+//    ]
+
+}

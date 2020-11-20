@@ -1,0 +1,8 @@
+include ':Hybrid'
+include ':BaseDependencies'
+include ':MediaPlayer'
+include ':PuciNet'
+include ':app'
+
+//include switchs['58AppDependenciesLib']?'':'58AppDependenciesLib'
+rootProject.name = "MySpace"
