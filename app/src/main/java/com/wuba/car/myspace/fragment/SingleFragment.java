@@ -28,14 +28,14 @@ public class SingleFragment extends BaseFragment<SinglePresenter> implements Sin
     private String keyword;
     private boolean isRefresh = false;
 
-    public static SingleFragment newInstance(String keyword){
-        if (Instance==null) {
+    public static SingleFragment newInstance(String keyword) {
+        if (Instance == null) {
             Instance = new SingleFragment();
         }
         Bundle bundle = new Bundle();
-        bundle.putString("keyword",keyword);
+        bundle.putString("keyword", keyword);
         Instance.setArguments(bundle);
-        return  Instance;
+        return Instance;
     }
 
     @Override
@@ -45,16 +45,16 @@ public class SingleFragment extends BaseFragment<SinglePresenter> implements Sin
 
     @Override
     protected void initViews(View view) {
-        presenter = new SinglePresenter(getContext(),this);
+        presenter = new SinglePresenter(getContext(), this);
         mRvSingle = view.findViewById(R.id.recyclerView);
         mProgramDatas = new ArrayList<>();
     }
 
     @Override
     protected void initViewData() {
-        if (getArguments()!=null){
+        if (getArguments() != null) {
             keyword = getArguments().getString("keyword");
-            presenter.getSingleDataByNet(keyword,isRefresh);
+            presenter.getSingleDataByNet(keyword, isRefresh);
         }
     }
 
@@ -65,15 +65,15 @@ public class SingleFragment extends BaseFragment<SinglePresenter> implements Sin
 
     @Override
     public void onResult(SingleBean bean, boolean isRefresh) {
-        if (bean.getEpisodes()!=null && bean.getEpisodes().size()>0){
-            singleAdapter = new SingleAdapter(getContext(),bean.getEpisodes());
+        if (bean.getEpisodes() != null && bean.getEpisodes().size() > 0) {
+            singleAdapter = new SingleAdapter(getContext(), bean.getEpisodes());
             LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
             mRvSingle.setLayoutManager(layoutManager);
             mRvSingle.setAdapter(singleAdapter);
             singleAdapter.setItemClickListener(new SingleAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(int position) {
-                    Toast.makeText(getContext(), "点击了"+position, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "点击了" + position, Toast.LENGTH_SHORT).show();
                 }
             });
         }
