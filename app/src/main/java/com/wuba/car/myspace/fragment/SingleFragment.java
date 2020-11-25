@@ -47,7 +47,6 @@ public class SingleFragment extends BaseFragment<SinglePresenter> implements Sin
     protected void initViews(View view) {
         presenter = new SinglePresenter(getContext(),this);
         mRvSingle = view.findViewById(R.id.recyclerView);
-        mProgramDatas = new ArrayList<>();
     }
 
     @Override

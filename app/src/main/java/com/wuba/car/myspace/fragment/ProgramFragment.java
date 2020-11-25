@@ -48,11 +48,6 @@ public class ProgramFragment extends BaseFragment<ProgramPresenter> implements P
     protected void initViews(View view) {
         presenter = new ProgramPresenter(getContext(),this);
         mRvProgram = view.findViewById(R.id.recyclerView);
-        mProgramDatas = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            mProgramDatas.add(i+"hello");
-        }
-
     }
 
     @Override
