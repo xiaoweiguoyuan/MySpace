@@ -13,8 +13,9 @@ open class VPAdapter:FragmentStatePagerAdapter{
 
     constructor(fm: FragmentManager) : super(fm) {
         commonWebFragments = ArrayList<Fragment>()
+        // TODO: 2020/11/20 SearchWebFragment要去掉的
 //        commonWebFragments.add(SearchWebFragment())
-//        commonWebFragments.add(SubscribeFragment())
+        commonWebFragments.add(SubscribeFragment())
         commonWebFragments.add(SearchFragment())
     }
 
