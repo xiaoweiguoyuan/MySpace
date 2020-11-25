@@ -81,5 +81,6 @@ dependencies {
 
     implementation 'com.github.wendux:DSBridge-Android:3.0-SNAPSHOT'
     implementation 'com.android.support:palette-v7:23.4.0'
+    implementation 'com.google.android.material:material:1.0.0'
 
 }
