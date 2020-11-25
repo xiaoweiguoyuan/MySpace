@@ -30,15 +30,16 @@ public class ProgramFragment extends BaseFragment<ProgramPresenter> implements P
     private String keyword;
     private boolean isRefresh = false;
 
-    public static ProgramFragment newInstance(String keyword){
-        if (Instance==null) {
+    public static ProgramFragment newInstance(String keyword) {
+        if (Instance == null) {
             Instance = new ProgramFragment();
         }
         Bundle bundle = new Bundle();
-        bundle.putString("keyword",keyword);
+        bundle.putString("keyword", keyword);
         Instance.setArguments(bundle);
-        return  Instance;
+        return Instance;
     }
+
     @Override
     protected int inflaterLayout() {
         return R.layout.fragment_program;
@@ -46,7 +47,7 @@ public class ProgramFragment extends BaseFragment<ProgramPresenter> implements P
 
     @Override
     protected void initViews(View view) {
-        presenter = new ProgramPresenter(getContext(),this);
+        presenter = new ProgramPresenter(getContext(), this);
         mRvProgram = view.findViewById(R.id.recyclerView);
         mProgramDatas = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
@@ -57,9 +58,9 @@ public class ProgramFragment extends BaseFragment<ProgramPresenter> implements P
 
     @Override
     protected void initViewData() {
-        if (getArguments()!=null){
+        if (getArguments() != null) {
             keyword = getArguments().getString("keyword");
-            presenter.getProgramDataByNet(keyword,isRefresh);
+            presenter.getProgramDataByNet(keyword, isRefresh);
         }
     }
 
@@ -70,15 +71,15 @@ public class ProgramFragment extends BaseFragment<ProgramPresenter> implements P
 
     @Override
     public void onResult(ProgramBean allBean, boolean isRefresh) {
-        if (allBean.getPodcasts()!=null){
-            allProgramAdapter = new ProgramAdapter(getContext(),allBean.getPodcasts());
+        if (allBean.getPodcasts() != null) {
+            allProgramAdapter = new ProgramAdapter(getContext(), allBean.getPodcasts());
             LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
             mRvProgram.setLayoutManager(layoutManager);
             mRvProgram.setAdapter(allProgramAdapter);
             allProgramAdapter.setItemClickListener(new ProgramAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(int position) {
-                    Toast.makeText(getContext(), "订阅了"+position, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "订阅了" + position, Toast.LENGTH_SHORT).show();
                 }
             });
         }
