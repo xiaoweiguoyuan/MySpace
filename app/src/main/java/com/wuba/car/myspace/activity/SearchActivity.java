@@ -18,14 +18,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
-import com.wuba.car.myspace.adapter.ProgramAdapter;
 import com.wuba.car.myspace.adapter.SearchHistoryAdapter;
 import com.wuba.car.myspace.base.BaseActivity;
 import com.wuba.car.myspace.base.BaseFragmentPagerAdapter;
 import com.wuba.car.myspace.entity.AllBean;
-import com.wuba.car.myspace.fragment.SubscribeFragment;
 import com.wuba.car.myspace.presenter.SearchAcPresenter;
-import com.wuba.car.myspace.presenter.SearchPresenter;
 import com.wuba.car.myspace.utils.Constants;
 import com.wuba.car.myspace.utils.SpUtils;
 import com.wuba.car.myspace.view.SearchAcV;
