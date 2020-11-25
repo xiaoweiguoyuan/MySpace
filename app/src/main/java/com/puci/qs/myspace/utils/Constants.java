@@ -21,4 +21,6 @@ public class Constants {
         public static final int THEME_CHANGE = 6;
 
     }
+
+    public static String SEARCH_HISTORY = "search_history";
 }

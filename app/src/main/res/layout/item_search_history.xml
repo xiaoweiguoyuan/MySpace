@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_marginLeft="12dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_history_16_outlined" />
+
+    <TextView
+        android:id="@+id/name"
+        android:maxLines="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/avatar"
+        android:text="日谈公园"
+        android:textColor="@color/color_AAAAAA"
+        android:textSize="13sp" />
+
+</RelativeLayout>

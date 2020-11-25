@@ -7,6 +7,21 @@ import com.puci.qs.myspace.entity.EpisodeDetail;
 import com.puci.qs.myspace.entity.SubscribeBean;
 import com.puci.qs.spacenet.http.response.Response;
 import com.puci.qs.spacenet.http.utils.Constants;
+import com.wuba.car.basedependencies.entity.BaseType;
+import com.wuba.car.myspace.entity.AllBean;
+import com.wuba.car.myspace.entity.CommentBean;
+import com.wuba.car.myspace.entity.CommentEpisodeRes;
+import com.wuba.car.myspace.entity.EpisodeDetail;
+import com.wuba.car.myspace.entity.ProgramBean;
+import com.wuba.car.myspace.entity.SingleBean;
+import com.wuba.car.myspace.entity.SubscribeBean;
+import com.wuba.car.spacenet.http.bean.LoginBean;
+import com.wuba.car.spacenet.http.bean.UploadBean;
+import com.wuba.car.spacenet.http.response.Response;
+import com.wuba.car.spacenet.http.service.ResponseBean;
+import com.wuba.car.spacenet.http.utils.Constants;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -40,4 +55,12 @@ public interface ApiService {
     @POST(Constants.UPLOAD_EPISODE_LIST)
     Call<Response> uploadEpisodeList(@Body RequestBody body);
 
+    @GET("/podcasts/search?format=json")
+    Call<AllBean> searchByNet(@Query("keyword") String keyword, @Query("type") String type); //type: "all", // all-全部/podcast-节目/episode-单集keyword: "xx"，
+
+    @GET("/podcasts/search?format=json")
+    Call<ProgramBean> searchProgramByNet(@Query("keyword") String keyword, @Query("type") String type); //type: "all", // all-全部/podcast-节目/episode-单集keyword: "xx"，
+
+    @GET("/podcasts/search?format=json")
+    Call<SingleBean> searchSingleByNet(@Query("keyword") String keyword, @Query("type") String type);
 }
