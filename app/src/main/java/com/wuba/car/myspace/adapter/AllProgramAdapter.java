@@ -38,8 +38,6 @@ public class AllProgramAdapter extends RecyclerView.Adapter<AllProgramAdapter.Vi
         holder.title.setText(mData.get(position).getName());
         holder.category.setText(mData.get(position).getCategory());
         holder.itemView.setTag(position);
-
-//        Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.alpha_anim);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
