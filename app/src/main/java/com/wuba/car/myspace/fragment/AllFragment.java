@@ -25,18 +25,18 @@ public class AllFragment extends BaseFragment<AllPresenter> implements AllV {
     private AllProgramAdapter allProgramAdapter;
     private AllSingleAdapter allSingleAdapter;
     private String keyword;
-    private LinearLayout mLLProgram,mLLSingle;
+    private LinearLayout mLLProgram, mLLSingle;
     private boolean isRefresh = false;
     private static AllFragment Instance;
 
-    public static AllFragment newInstance(String keyword){
-        if (Instance==null) {
+    public static AllFragment newInstance(String keyword) {
+        if (Instance == null) {
             Instance = new AllFragment();
         }
         Bundle bundle = new Bundle();
-        bundle.putString("keyword",keyword);
+        bundle.putString("keyword", keyword);
         Instance.setArguments(bundle);
-        return  Instance;
+        return Instance;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class AllFragment extends BaseFragment<AllPresenter> implements AllV {
 
     @Override
     protected void initViews(View view) {
-        presenter = new AllPresenter(getActivity(),this);
+        presenter = new AllPresenter(getActivity(), this);
         mRvProgram = view.findViewById(R.id.recyclerView);
         mRvSigle = view.findViewById(R.id.recyclerView2);
         mLLProgram = view.findViewById(R.id.ll_program);
@@ -55,9 +55,9 @@ public class AllFragment extends BaseFragment<AllPresenter> implements AllV {
 
     @Override
     protected void initViewData() {
-        if (getArguments()!=null){
+        if (getArguments() != null) {
             keyword = getArguments().getString("keyword");
-            presenter.getAllDataByNet(keyword,isRefresh);
+            presenter.getAllDataByNet(keyword, isRefresh);
         }
     }
 
@@ -68,9 +68,9 @@ public class AllFragment extends BaseFragment<AllPresenter> implements AllV {
 
     @Override
     public void onResult(AllBean allBean, boolean isRefresh) {
-        if (allBean.getPodcasts()!=null && allBean.getPodcasts().size()>0){
+        if (allBean.getPodcasts() != null && allBean.getPodcasts().size() > 0) {
             mLLProgram.setVisibility(View.VISIBLE);
-            allProgramAdapter = new AllProgramAdapter(getContext(),allBean.getPodcasts());
+            allProgramAdapter = new AllProgramAdapter(getContext(), allBean.getPodcasts());
             LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
             mRvProgram.setLayoutManager(layoutManager);
             mRvProgram.setAdapter(allProgramAdapter);
@@ -80,22 +80,22 @@ public class AllFragment extends BaseFragment<AllPresenter> implements AllV {
                     Toast.makeText(getContext(), "订阅", Toast.LENGTH_SHORT).show();
                 }
             });
-        }else {
+        } else {
             mLLProgram.setVisibility(View.GONE);
         }
-        if (allBean.getEpisodes()!=null && allBean.getEpisodes().size()>0){
+        if (allBean.getEpisodes() != null && allBean.getEpisodes().size() > 0) {
             mLLSingle.setVisibility(View.VISIBLE);
-            allSingleAdapter = new AllSingleAdapter(getContext(),allBean.getEpisodes());
+            allSingleAdapter = new AllSingleAdapter(getContext(), allBean.getEpisodes());
             LinearLayoutManager layoutManagerSingle = new LinearLayoutManager(getContext());
             mRvSigle.setLayoutManager(layoutManagerSingle);
             mRvSigle.setAdapter(allSingleAdapter);
             allSingleAdapter.setItemClickListener(new AllSingleAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(int position) {
-                    Toast.makeText(getContext(), "点击了"+position, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "点击了" + position, Toast.LENGTH_SHORT).show();
                 }
             });
-        }else {
+        } else {
             mLLSingle.setVisibility(View.GONE);
         }
     }
