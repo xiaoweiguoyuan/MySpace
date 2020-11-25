@@ -60,7 +60,6 @@ public class ProgramFragment extends BaseFragment<ProgramPresenter> implements P
 
     @Override
     public void onClick(View view) {
-
     }
 
     @Override
