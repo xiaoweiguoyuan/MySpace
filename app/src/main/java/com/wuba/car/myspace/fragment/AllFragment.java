@@ -24,8 +24,6 @@ public class AllFragment extends BaseFragment<AllPresenter> implements AllV {
     private RecyclerView mRvSigle;
     private AllProgramAdapter allProgramAdapter;
     private AllSingleAdapter allSingleAdapter;
-    private List<String> mProgramDatas;
-    private List<String> mSingleDatas;
     private String keyword;
     private LinearLayout mLLProgram,mLLSingle;
     private boolean isRefresh = false;
@@ -53,25 +51,6 @@ public class AllFragment extends BaseFragment<AllPresenter> implements AllV {
         mRvSigle = view.findViewById(R.id.recyclerView2);
         mLLProgram = view.findViewById(R.id.ll_program);
         mLLSingle = view.findViewById(R.id.ll_single);
-//        mProgramDatas = new ArrayList<>();
-//        mSingleDatas = new ArrayList<>();
-//        for (int i = 0; i < 5; i++) {
-//            mProgramDatas.add(i+"hello");
-//        }
-//
-//        for (int i = 0; i <20 ; i++) {
-//            mSingleDatas.add(i+"hello");
-//        }
-//
-//        allProgramAdapter = new AllProgramAdapter(getContext(),mProgramDatas);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-//        mRvProgram.setLayoutManager(layoutManager);
-//        mRvProgram.setAdapter(allProgramAdapter);
-//
-//        allSingleAdapter = new AllSingleAdapter(getContext(),mSingleDatas);
-//        LinearLayoutManager layoutManagerSingle = new LinearLayoutManager(getContext());
-//        mRvSigle.setLayoutManager(layoutManagerSingle);
-//        mRvSigle.setAdapter(allSingleAdapter);
     }
 
     @Override
