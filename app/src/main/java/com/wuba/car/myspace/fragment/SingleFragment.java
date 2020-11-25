@@ -23,7 +23,6 @@ import java.util.List;
 public class SingleFragment extends BaseFragment<SinglePresenter> implements SingleV {
     private RecyclerView mRvSingle;
     private SingleAdapter singleAdapter;
-    private List<String> mProgramDatas;
     private static SingleFragment Instance;
     private String keyword;
     private boolean isRefresh = false;
@@ -47,7 +46,6 @@ public class SingleFragment extends BaseFragment<SinglePresenter> implements Sin
     protected void initViews(View view) {
         presenter = new SinglePresenter(getContext(), this);
         mRvSingle = view.findViewById(R.id.recyclerView);
-        mProgramDatas = new ArrayList<>();
     }
 
     @Override
