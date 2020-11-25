@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_height="88dp"
+    android:background="@drawable/bg_white_radius10"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_marginLeft="12dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/avatar"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@mipmap/ic_default" />
+
+    <TextView
+        android:layout_toLeftOf="@+id/tv_subscribe"
+        android:id="@+id/name"
+        android:maxLines="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/avatar"
+        android:text="日谈公园"
+        android:textColor="@color/color_333333"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="13dp"
+        android:layout_toRightOf="@+id/avatar"
+        android:text="日谈公园 · 2 天前更新"
+        android:textColor="@color/color_999999"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_subscribe"
+        android:layout_marginRight="12dp"
+        android:gravity="center"
+        android:text="订阅"
+        android:textSize="13sp"
+        android:textColor="@color/color_5cc93b"
+        android:layout_width="62dp"
+        android:layout_height="28dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_white_radius14" />
+</RelativeLayout>

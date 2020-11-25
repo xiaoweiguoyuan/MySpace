@@ -6,5 +6,4 @@ import com.wuba.car.myspace.view.SearchV
 
 open class SearchPresenter(context: Context, v: SearchV, view: SearchV?):
     BasePresenter<SearchV>(context, view) {
-
 }

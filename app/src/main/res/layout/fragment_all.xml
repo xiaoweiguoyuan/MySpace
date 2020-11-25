@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/ll_program"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/bg_white_radius20"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_jiemu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="20dp"
+                            android:text="节目"
+                            android:textColor="@color/color_333333"
+                            android:textSize="21sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="19dp"
+                            android:text="更多>"
+                            android:textColor="@color/color_AAAAAA"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@+id/tv_jiemu"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@drawable/dash_line"
+                            android:layerType="software" />
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="20dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_single"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/bg_white_radius20"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_danji"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="20dp"
+                            android:text="单集"
+                            android:textColor="@color/color_333333"
+                            android:textSize="21sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="19dp"
+                            android:text="更多>"
+                            android:textColor="@color/color_AAAAAA"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@+id/tv_danji"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@drawable/dash_line"
+                            android:layerType="software" />
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="20dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</FrameLayout>

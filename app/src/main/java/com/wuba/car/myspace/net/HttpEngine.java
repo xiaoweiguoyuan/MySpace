@@ -5,9 +5,12 @@ import android.text.TextUtils;
 import androidx.annotation.NonNull;
 
 import com.wuba.car.basedependencies.utils.SaveLog;
+import com.wuba.car.myspace.entity.AllBean;
 import com.wuba.car.myspace.entity.CommentBean;
 import com.wuba.car.myspace.entity.CommentEpisodeRes;
 import com.wuba.car.myspace.entity.EpisodeDetail;
+import com.wuba.car.myspace.entity.ProgramBean;
+import com.wuba.car.myspace.entity.SingleBean;
 import com.wuba.car.myspace.entity.SubscribeBean;
 import com.wuba.car.myspace.utils.Constants;
 import com.wuba.car.qishuier.BuildConfig;
@@ -151,5 +154,18 @@ public class HttpEngine {
         mApiInterface.uploadEpisodeList(body).enqueue(callback);
     }
 
+
+    public void searchByNet(@NonNull String keywork,@NonNull String type, @NonNull Callback<AllBean> callback) {
+        mApiInterface.searchByNet(keywork,type).enqueue(callback);
+    }
+
+    public void searchProgramByNet(@NonNull String keywork,@NonNull String type, @NonNull Callback<ProgramBean> callback) {
+        mApiInterface.searchProgramByNet(keywork,type).enqueue(callback);
+    }
+
+
+    public void searchSingleByNet(@NonNull String keywork,@NonNull String type, @NonNull Callback<SingleBean> callback) {
+        mApiInterface.searchSingleByNet(keywork,type).enqueue(callback);
+    }
 }
 

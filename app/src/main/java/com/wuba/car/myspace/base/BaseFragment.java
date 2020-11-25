@@ -52,7 +52,6 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
                 parent.removeView(mRootView.get());
             }
         }
-
         initViewData();
         return mRootView.get();
     }
