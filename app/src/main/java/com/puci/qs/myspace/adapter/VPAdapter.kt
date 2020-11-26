@@ -3,8 +3,7 @@ package com.puci.qs.myspace.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import com.puci.qs.myspace.fragment.SearchFragment
-import com.puci.qs.myspace.fragment.SearchWebFragment
+import com.puci.qs.myspace.fragment.FindFragment
 import com.puci.qs.myspace.fragment.SubscribeFragment
 
 open class VPAdapter:FragmentStatePagerAdapter{
@@ -15,7 +14,8 @@ open class VPAdapter:FragmentStatePagerAdapter{
         commonWebFragments = ArrayList<Fragment>()
 //        commonWebFragments.add(SearchWebFragment())
 //        commonWebFragments.add(SubscribeFragment())
-        commonWebFragments.add(SearchFragment())
+        commonWebFragments.add(FindFragment())
+        commonWebFragments.add(SubscribeFragment())
     }
 
     constructor(fm: FragmentManager, fragments: ArrayList<Fragment>) : super(fm) {

@@ -1,30 +1,30 @@
-package com.wuba.car.myspace.presenter;
+package com.puci.qs.myspace.presenter;
 
 import android.content.Context;
+import android.util.Log;
 
-import com.wuba.car.myspace.base.BasePresenter;
-import com.wuba.car.myspace.entity.AllBean;
-import com.wuba.car.myspace.entity.EpisodeDetail;
-import com.wuba.car.myspace.net.HttpEngine;
-import com.wuba.car.myspace.view.AllV;
+import com.puci.qs.myspace.base.BasePresenter;
+import com.puci.qs.myspace.entity.AllBean;
+import com.puci.qs.myspace.net.HttpEngine;
+import com.puci.qs.myspace.view.SearchAcV;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AllPresenter extends BasePresenter<AllV> {
-
-    public AllPresenter(Context context, AllV view) {
+public class SearchAcPresenter extends BasePresenter {
+    private SearchAcV view;
+    public SearchAcPresenter(Context context, SearchAcV view) {
         super(context, view);
+        this.view = view;
     }
 
     public void getAllDataByNet(String keyword,boolean isRefresh) {
         HttpEngine.getInstance().searchByNet(keyword, "all", new Callback<AllBean>() {
             @Override
             public void onResponse(Call<AllBean> call, Response<AllBean> response) {
-                if (response.body()!=null) {
-                    view.onResult(response.body(), isRefresh);
-                }
+                Log.i("zz",call.toString()+response+toString());
+                view.onResult(response.body(),isRefresh);
             }
 
 
@@ -34,7 +34,4 @@ public class AllPresenter extends BasePresenter<AllV> {
             }
         });
     }
-
-
-
 }

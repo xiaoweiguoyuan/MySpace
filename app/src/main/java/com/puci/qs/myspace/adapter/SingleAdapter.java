@@ -1,4 +1,4 @@
-package com.wuba.car.myspace.adapter;
+package com.puci.qs.myspace.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,16 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.wuba.car.myspace.entity.ProgramBean;
-import com.wuba.car.qishuier.R;
+import com.puci.qs.myspace.entity.SingleBean;
+import com.puci.qs.qishuier.R;
 
 import java.util.List;
 
-public class SearchHistoryAdapter extends RecyclerView.Adapter<SearchHistoryAdapter.ViewHolder> {
+public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.ViewHolder> {
     private Context mContext;
-    private List<String> mData;
+    private List<SingleBean.EpisodesBean> mData;
     private OnItemClickListener itemClickListener;
-    public SearchHistoryAdapter(Context mContext, List<String> mData) {
+    public SingleAdapter(Context mContext, List<SingleBean.EpisodesBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -28,12 +28,15 @@ public class SearchHistoryAdapter extends RecyclerView.Adapter<SearchHistoryAdap
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new SearchHistoryAdapter.ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_search_history,parent,false));
+        return new SingleAdapter.ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_single,parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvTitle.setText(mData.get(position));
+        Glide.with(mContext).load(mData.get(position).getEpisode_art_url()).into(holder.imageView);
+        holder.title.setText(mData.get(position).getTitle());
+        holder.program.setText(mData.get(position).getPodcast().getName());
+        holder.time.setText(mData.get(position).getTotal_time()+"分钟");
         holder.itemView.setTag(position);
 //        Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.alpha_anim);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -51,10 +54,14 @@ public class SearchHistoryAdapter extends RecyclerView.Adapter<SearchHistoryAdap
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView tvTitle;
+        private ImageView imageView;
+        private TextView title,program,time;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvTitle = itemView.findViewById(R.id.name);
+            imageView = itemView.findViewById(R.id.avatar);
+            title = itemView.findViewById(R.id.name);
+            program = itemView.findViewById(R.id.content);
+            time = itemView.findViewById(R.id.time);
         }
     }
 

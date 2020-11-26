@@ -1,12 +1,9 @@
-package com.wuba.car.myspace.activity;
+package com.puci.qs.myspace.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -18,15 +15,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
-import com.wuba.car.myspace.adapter.SearchHistoryAdapter;
-import com.wuba.car.myspace.base.BaseActivity;
-import com.wuba.car.myspace.base.BaseFragmentPagerAdapter;
-import com.wuba.car.myspace.entity.AllBean;
-import com.wuba.car.myspace.presenter.SearchAcPresenter;
-import com.wuba.car.myspace.utils.Constants;
-import com.wuba.car.myspace.utils.SpUtils;
-import com.wuba.car.myspace.view.SearchAcV;
-import com.wuba.car.qishuier.R;
+import com.puci.qs.myspace.adapter.SearchHistoryAdapter;
+import com.puci.qs.myspace.base.BaseActivity;
+import com.puci.qs.myspace.base.BaseFragmentPagerAdapter;
+import com.puci.qs.myspace.entity.AllBean;
+import com.puci.qs.myspace.presenter.SearchAcPresenter;
+import com.puci.qs.myspace.utils.Constants;
+import com.puci.qs.myspace.utils.SpUtils;
+import com.puci.qs.myspace.view.SearchAcV;
+import com.puci.qs.qishuier.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;

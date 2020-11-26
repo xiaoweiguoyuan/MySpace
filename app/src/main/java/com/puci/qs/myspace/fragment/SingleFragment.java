@@ -1,4 +1,4 @@
-package com.wuba.car.myspace.fragment;
+package com.puci.qs.myspace.fragment;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,17 +7,13 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.wuba.car.myspace.adapter.ProgramAdapter;
-import com.wuba.car.myspace.adapter.SingleAdapter;
-import com.wuba.car.myspace.base.BaseFragment;
-import com.wuba.car.myspace.entity.SingleBean;
-import com.wuba.car.myspace.presenter.AllPresenter;
-import com.wuba.car.myspace.presenter.SearchAcPresenter;
-import com.wuba.car.myspace.presenter.SinglePresenter;
-import com.wuba.car.myspace.view.SingleV;
-import com.wuba.car.qishuier.R;
+import com.puci.qs.myspace.adapter.SingleAdapter;
+import com.puci.qs.myspace.base.BaseFragment;
+import com.puci.qs.myspace.entity.SingleBean;
+import com.puci.qs.myspace.presenter.SinglePresenter;
+import com.puci.qs.myspace.view.SingleV;
+import com.puci.qs.qishuier.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SingleFragment extends BaseFragment<SinglePresenter> implements SingleV {

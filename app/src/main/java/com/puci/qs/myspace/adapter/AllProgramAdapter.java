@@ -1,4 +1,4 @@
-package com.wuba.car.myspace.adapter;
+package com.puci.qs.myspace.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.wuba.car.myspace.entity.AllBean;
-import com.wuba.car.qishuier.R;
+import com.puci.qs.myspace.entity.AllBean;
+import com.puci.qs.qishuier.R;
 
 
 import java.util.List;

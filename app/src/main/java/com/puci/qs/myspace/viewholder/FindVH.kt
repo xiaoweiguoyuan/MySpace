@@ -4,7 +4,7 @@ import android.view.View
 import com.puci.qs.basedependencies.entity.Podcast
 import com.puci.qs.myspace.adapter.BaseViewHolder
 
-open class SearchChildVH(itemView: View) : BaseViewHolder<Podcast>(itemView) {
+open class FindVH(itemView: View) : BaseViewHolder<Podcast>(itemView) {
     override fun initView() {
 
     }

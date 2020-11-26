@@ -1,13 +1,11 @@
-package com.wuba.car.myspace.presenter;
+package com.puci.qs.myspace.presenter;
 
 import android.content.Context;
 
-import com.wuba.car.myspace.base.BasePresenter;
-import com.wuba.car.myspace.entity.ProgramBean;
-import com.wuba.car.myspace.entity.SingleBean;
-import com.wuba.car.myspace.net.HttpEngine;
-import com.wuba.car.myspace.view.ProgramV;
-import com.wuba.car.myspace.view.SingleV;
+import com.puci.qs.myspace.base.BasePresenter;
+import com.puci.qs.myspace.entity.SingleBean;
+import com.puci.qs.myspace.net.HttpEngine;
+import com.puci.qs.myspace.view.SingleV;
 
 import retrofit2.Call;
 import retrofit2.Callback;

@@ -1,7 +1,7 @@
-package com.wuba.car.myspace.view;
+package com.puci.qs.myspace.view;
 
 
-import com.wuba.car.myspace.entity.AllBean;
+import com.puci.qs.myspace.entity.AllBean;
 
 public interface SearchAcV {
     void onResult(AllBean allBean, boolean isRefresh);

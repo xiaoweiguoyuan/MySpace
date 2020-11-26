@@ -1,13 +1,12 @@
-package com.wuba.car.myspace.base;
+package com.puci.qs.myspace.base;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.wuba.car.myspace.fragment.AllFragment;
-import com.wuba.car.myspace.fragment.ProgramFragment;
-import com.wuba.car.myspace.fragment.SingleFragment;
-import com.wuba.car.myspace.fragment.SubscribeFragment;
+import com.puci.qs.myspace.fragment.AllFragment;
+import com.puci.qs.myspace.fragment.ProgramFragment;
+import com.puci.qs.myspace.fragment.SingleFragment;
 
 import java.util.ArrayList;
 import java.util.List;

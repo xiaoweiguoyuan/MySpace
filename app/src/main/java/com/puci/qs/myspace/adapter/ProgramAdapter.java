@@ -1,4 +1,4 @@
-package com.wuba.car.myspace.adapter;
+package com.puci.qs.myspace.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,16 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.wuba.car.myspace.entity.SingleBean;
-import com.wuba.car.qishuier.R;
+import com.puci.qs.myspace.entity.ProgramBean;
+import com.puci.qs.qishuier.R;
 
 import java.util.List;
 
-public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.ViewHolder> {
+public class ProgramAdapter extends RecyclerView.Adapter<ProgramAdapter.ViewHolder> {
     private Context mContext;
-    private List<SingleBean.EpisodesBean> mData;
+    private List<ProgramBean.PodcastsBean> mData;
     private OnItemClickListener itemClickListener;
-    public SingleAdapter(Context mContext, List<SingleBean.EpisodesBean> mData) {
+    public ProgramAdapter(Context mContext, List<ProgramBean.PodcastsBean> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -28,15 +28,15 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new SingleAdapter.ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_single,parent,false));
+        return new ProgramAdapter.ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_program,parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Glide.with(mContext).load(mData.get(position).getEpisode_art_url()).into(holder.imageView);
-        holder.title.setText(mData.get(position).getTitle());
-        holder.program.setText(mData.get(position).getPodcast().getName());
-        holder.time.setText(mData.get(position).getTotal_time()+"分钟");
+
+        Glide.with(mContext).load(mData.get(position).getImage()).into(holder.imageView);
+        holder.tvTitle.setText(mData.get(position).getName());
+        holder.tvContent.setText(mData.get(position).getCategory());
         holder.itemView.setTag(position);
 //        Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.alpha_anim);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -55,13 +55,12 @@ public class SingleAdapter extends RecyclerView.Adapter<SingleAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private ImageView imageView;
-        private TextView title,program,time;
+        private TextView tvTitle,tvContent;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.avatar);
-            title = itemView.findViewById(R.id.name);
-            program = itemView.findViewById(R.id.content);
-            time = itemView.findViewById(R.id.time);
+            tvTitle = itemView.findViewById(R.id.name);
+            tvContent = itemView.findViewById(R.id.content);
         }
     }
 

@@ -1,4 +1,4 @@
-package com.wuba.car.myspace.fragment;
+package com.puci.qs.myspace.fragment;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,16 +8,13 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.wuba.car.myspace.adapter.AllProgramAdapter;
-import com.wuba.car.myspace.adapter.AllSingleAdapter;
-import com.wuba.car.myspace.base.BaseFragment;
-import com.wuba.car.myspace.entity.AllBean;
-import com.wuba.car.myspace.presenter.AllPresenter;
-import com.wuba.car.myspace.view.AllV;
-import com.wuba.car.qishuier.R;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.puci.qs.myspace.adapter.AllProgramAdapter;
+import com.puci.qs.myspace.adapter.AllSingleAdapter;
+import com.puci.qs.myspace.base.BaseFragment;
+import com.puci.qs.myspace.entity.AllBean;
+import com.puci.qs.myspace.presenter.AllPresenter;
+import com.puci.qs.myspace.view.AllV;
+import com.puci.qs.qishuier.R;
 
 public class AllFragment extends BaseFragment<AllPresenter> implements AllV {
     private RecyclerView mRvProgram;

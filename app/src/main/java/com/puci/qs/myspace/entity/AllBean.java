@@ -1,4 +1,4 @@
-package com.wuba.car.myspace.entity;
+package com.puci.qs.myspace.entity;
 
 import java.util.List;
 

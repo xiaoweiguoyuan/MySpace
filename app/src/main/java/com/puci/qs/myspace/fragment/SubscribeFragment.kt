@@ -17,6 +17,8 @@ import com.puci.qs.myspace.utils.CommonDecoration
 import com.puci.qs.myspace.utils.EpisodeUtils
 import com.puci.qs.myspace.view.SubscribeV
 import com.puci.qs.qishuier.R
+import com.puci.qs.spacenet.http.utils.ToastUtils
+import retrofit2.Call
 
 class SubscribeFragment : BaseFragment<SubscribePresenter?>(), SubscribeV, OnRefreshListener, OnLoadMoreListener {
 
@@ -68,6 +70,12 @@ class SubscribeFragment : BaseFragment<SubscribePresenter?>(), SubscribeV, OnRef
         if (!hasNext) {
             refresh_layout?.setEnableLoadMore(false)
         }
+    }
+
+    override fun onFail(call: Call<SubscribeBean>, t: Throwable) {
+        refresh_layout?.finishRefresh()
+        refresh_layout?.finishLoadMore()
+        ToastUtils.show(t.message)
     }
 
     override fun onRefresh(refreshLayout: RefreshLayout) {

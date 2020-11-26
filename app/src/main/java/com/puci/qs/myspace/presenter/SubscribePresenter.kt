@@ -46,7 +46,7 @@ open class SubscribePresenter(context: Context?, view: SubscribeV?) :
             }
 
             override fun onFailure(call: Call<SubscribeBean>, t: Throwable) {
-
+                view.onFail(call, t)
             }
 
         })

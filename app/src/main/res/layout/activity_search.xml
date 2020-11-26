@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/color_f2f2f2"
     android:orientation="vertical"
-    tools:context="com.wuba.car.myspace.activity.SearchActivity">
+    tools:context="com.puci.qs.myspace.activity">
 
     <LinearLayout
         android:layout_marginTop="7dp"

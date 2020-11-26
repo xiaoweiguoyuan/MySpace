@@ -7,21 +7,9 @@ import com.puci.qs.myspace.entity.EpisodeDetail;
 import com.puci.qs.myspace.entity.SubscribeBean;
 import com.puci.qs.spacenet.http.response.Response;
 import com.puci.qs.spacenet.http.utils.Constants;
-import com.wuba.car.basedependencies.entity.BaseType;
-import com.wuba.car.myspace.entity.AllBean;
-import com.wuba.car.myspace.entity.CommentBean;
-import com.wuba.car.myspace.entity.CommentEpisodeRes;
-import com.wuba.car.myspace.entity.EpisodeDetail;
-import com.wuba.car.myspace.entity.ProgramBean;
-import com.wuba.car.myspace.entity.SingleBean;
-import com.wuba.car.myspace.entity.SubscribeBean;
-import com.wuba.car.spacenet.http.bean.LoginBean;
-import com.wuba.car.spacenet.http.bean.UploadBean;
-import com.wuba.car.spacenet.http.response.Response;
-import com.wuba.car.spacenet.http.service.ResponseBean;
-import com.wuba.car.spacenet.http.utils.Constants;
-
-import org.json.JSONArray;
+import com.puci.qs.myspace.entity.AllBean;
+import com.puci.qs.myspace.entity.ProgramBean;
+import com.puci.qs.myspace.entity.SingleBean;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -32,6 +20,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 
 public interface ApiService {
